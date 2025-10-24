@@ -11,6 +11,3 @@ treatment_1 <- survey$Доверяете.ли.вы.данной.статье.[su
 surveys$Treatment <- as.factor(surveys$Treatment)
 t.test(control_1,treatment_1)
 View(surveys)
-
-model <- lm(Доверяете.ли.вы.данной.статье. ~ Treatment, data = surveys) 
-summary(model)
