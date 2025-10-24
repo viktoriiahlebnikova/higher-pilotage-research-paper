@@ -1,0 +1,16 @@
+install.packages(c('estimatr', 'car'))
+library(estimatr)
+library(car)
+
+url <- "https://github.com/viktoriiahlebnikova/higher-pilotage-research-paper/raw/refs/heads/main/surveys"
+surveys <- read.csv(url_1, header = TRUE)
+
+control_1 <- surveys$Доверяете.ли.вы.данной.статье.[surveys$Treatment == 0] 
+treatment_1 <- survey$Доверяете.ли.вы.данной.статье.[surveys$Treatment == 1]
+
+surveys$Treatment <- as.factor(surveys$Treatment)
+t.test(control_1,treatment_1)
+View(surveys)
+
+model <- lm(Доверяете.ли.вы.данной.статье. ~ Treatment, data = surveys) 
+summary(model)
